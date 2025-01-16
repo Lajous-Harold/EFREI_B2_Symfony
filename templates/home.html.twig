@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil
+{% endblock %}
+
+{% block section %}
+	<article>
+		<h1 class="acceuil-title">Bienvenue sur la page du Garage Parot!</h1>
+		<img class='img' src="{{asset('images/garage.jpg')}}" alt="">
+
+
+		<h2>Là où toutes nos voitures rentrent cassées, et sortent réparées !</h2>
+
+		<p>Dans notre garage, vous nous amenez
+			<strong>votre voiture</strong>, on fait un devis et on vous la répare en moins de temps possible !</p>
+		<h2>Nos engagements :</h2>
+		<p>Faire un devis et réparer votre voiture le plus rapidement possible !</p>
+		<p>Réviser votre voiture.</p>
+		<p>Analyser le problème pour que vous ayez votre voiture le plus vite possible</p>
+	</article>
+{% endblock %}

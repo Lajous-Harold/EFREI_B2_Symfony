@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page catalogue
+{% endblock %}
+
+
+{# #}
+
+
+{# <div class="container">
+	</div> #}
+{% block section %}
+	<div class="titrepagecata">
+		<h1>Articles en Vente</h1>
+	</div>
+	<section>
+		{% for article in articles %}
+			<div class="card mb-3">
+				<h3 class="card-header">{{article.vehicleName}}</h3>
+				<div class="card-body"></div>
+				<img src="{{ asset('images/' ~ article.image) }}" alt="Mon image">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">{{article.price }}€</li>
+					<li class="list-group-item">date de circulation :
+						{{article.circulationDate|date('d/m/Y') }}</li>
+					<li class="list-group-item">{{article.kilometer}}
+						km</li>
+
+				</ul>
+				<div class="card-footer text-muted">
+					ajouté le
+					{{article.createdAt|date('d/m/Y') }}
+
+				</div>
+			</div>
+		{% endfor %}
+		<div class="navigation">
+			{{ knp_pagination_render(articles) }}
+		</div>
+
+	</section>
+{% endblock %}
